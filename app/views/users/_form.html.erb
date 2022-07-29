@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row justify-content-md-center mt-4">
+        <div class="col-8">
+            <%= render 'shared/errors', obj: @user %>
+            <%= form_with(model: @user, local: true) do |f| %>
+                <form>
+                    <div class="card shadow mb-5 bg-white rounded">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <%= f.label :username, class: "col-form-label" %>
+                                <%= f.text_field :username, class:"form-control", placeholder: "Enter your user name" %>
+                            </div>
+                            <div class="form-group">
+                                <%= f.label :email, class: "col-form-label" %>
+                                <%= f.email_field :email, class:"form-control", placeholder: "Enter your email" %>
+                            </div>
+                            <div class="form-group">
+                                <%= f.label :password, 'Password', class: "col-form-label" %>
+                                <%= f.password_field :password, class:"form-control", placeholder: "Choose your password" %>
+                            </div>
+                            <%= f.submit "Sign up", class:"btn btn-primary"%>
+                        </div>
+                    </div>
+                </form>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<%= link_to "Back to Articles", articles_path, class:"btn btn-secondary ml-2" %>
